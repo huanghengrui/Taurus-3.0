@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DATA_ITA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-ITA.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EditSelectAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\EditSelectAll.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewZoomOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ViewZoomOut.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Delete.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\视图(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\表(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\视图(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SignalLEDGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDGreen.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddBtn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\updateDB.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_CHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-CHT.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_DEU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-DEU.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_RUS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-RUS.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="HelpAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\HelpAbout.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_020" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\updateDB.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\视图(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_015" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\储存过程(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\表(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\视图(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\函数(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\储存过程(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_019" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\触发器(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_012" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\视图(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_ARG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-ARG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DeleteBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteBtn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_DATA_JPN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-JPN.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_CHS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-CHS.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\update.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DBRefresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\DBRefresh.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Exit.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ViewZoomIn.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_DATA_KOR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-KOR.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="Note" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Note.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\表(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\储存过程(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\视图(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GroupBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GroupBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_012" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\视图(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="FileSaveAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\FileSaveAll.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignalLEDLtBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDLtBlue.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_DATA_ITA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-ITA.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_FRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-FRA.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_PTG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-PTG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\函数(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_015" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\储存过程(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EditUndo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\EditUndo.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitSystem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ExitSystem.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditBtn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolsHammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ToolsHammer.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\视图(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_JPN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-JPN.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\表(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_014" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\储存过程(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SignalLEDYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDYellow.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DATA_CHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-CHT.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\储存过程(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_ARG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-ARG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="FilePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\FilePrint.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_DATA_FRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-FRA.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\表(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SignalLEDBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDBlue.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\FileSave.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_DATA_ESN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-ESN.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\表(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SignalLEDRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDRed.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\储存过程(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_019" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\触发器(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\表(05工资).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SignalLEDOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDOrange.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\储存过程(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\视图(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_ESN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-ESN.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_DEU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-DEU.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Search.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\函数(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\about.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DATA_PTG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-PTG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="UPDATE_006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\update.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_ENG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-ENG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_RUS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-RUS.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_UPDATE_014" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\储存过程(01系统).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="AccessMDB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\Taurus.mdb;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="FilePrintPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\FilePrintPreview.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\储存过程(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ACCESS_DATA_CHS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\ACCESS\数据-CHS.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Import.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\函数(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ArrowUp.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPDATE_004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\表(04设备).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\ArrowDown.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\视图(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\login.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddGroup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\表(03考勤).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DATA_ENG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-ENG.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="favicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\favicon.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DATA_KOR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\bin\script\数据-KOR.sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EditUnSelectAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\EditUnSelectAll.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\Export.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCESS_UPDATE_002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\bin\script\ACCESS\表(02人员).sql;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\New.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignalLEDViolet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Picture\SignalLEDViolet.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

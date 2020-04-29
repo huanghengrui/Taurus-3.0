@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD792601-0F21-4721-9F4F-CCB3F123C54E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>Taurus.RS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Bin\Taurus.RS.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Team Tools\Static Analysis Tools\Rule Sets\MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Bin\Taurus.RS.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.grdesLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AxInterop.grproLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.grdesLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.grproLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\RS\CardReader.cs">
+      <Link>CardReader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RS\RSConvertDepart.cs">
+      <Link>RSConvertDepart.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSConvertDepart.designer.cs">
+      <Link>RSConvertDepart.designer.cs</Link>
+      <DependentUpon>RSConvertDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSDepart.cs">
+      <Link>RSDepart.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSDepart.designer.cs">
+      <Link>RSDepart.designer.cs</Link>
+      <DependentUpon>RSDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSDepartAdd.cs">
+      <Link>RSDepartAdd.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSDepartAdd.designer.cs">
+      <Link>RSDepartAdd.designer.cs</Link>
+      <DependentUpon>RSDepartAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSDimission.cs">
+      <Link>RSDimission.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSDimission.designer.cs">
+      <Link>RSDimission.designer.cs</Link>
+      <DependentUpon>RSDimission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSDimissionAdd.cs">
+      <Link>RSDimissionAdd.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSDimissionAdd.designer.cs">
+      <Link>RSDimissionAdd.designer.cs</Link>
+      <DependentUpon>RSDimissionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmp.cs">
+      <Link>RSEmp.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmp.designer.cs">
+      <Link>RSEmp.designer.cs</Link>
+      <DependentUpon>RSEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmpAdd.cs">
+      <Link>RSEmpAdd.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmpAdd.designer.cs">
+      <Link>RSEmpAdd.designer.cs</Link>
+      <DependentUpon>RSEmpAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmpChart.cs">
+      <Link>RSEmpChart.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSEmpChart.designer.cs">
+      <Link>RSEmpChart.designer.cs</Link>
+      <DependentUpon>RSEmpChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\RSOprt.cs">
+      <Link>RSOprt.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\RS\RSOprt.designer.cs">
+      <Link>RSOprt.designer.cs</Link>
+      <DependentUpon>RSOprt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\RS\ShowForms.cs">
+      <Link>ShowForms.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Taurus\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\RS\RSConvertDepart.resx">
+      <Link>RSConvertDepart.resx</Link>
+      <DependentUpon>RSConvertDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSDepart.resx">
+      <Link>RSDepart.resx</Link>
+      <DependentUpon>RSDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSDepartAdd.resx">
+      <Link>RSDepartAdd.resx</Link>
+      <DependentUpon>RSDepartAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSDimission.resx">
+      <Link>RSDimission.resx</Link>
+      <DependentUpon>RSDimission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSDimissionAdd.resx">
+      <Link>RSDimissionAdd.resx</Link>
+      <DependentUpon>RSDimissionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSEmp.resx">
+      <Link>RSEmp.resx</Link>
+      <DependentUpon>RSEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSEmpAdd.resx">
+      <Link>RSEmpAdd.resx</Link>
+      <DependentUpon>RSEmpAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSEmpChart.resx">
+      <Link>RSEmpChart.resx</Link>
+      <DependentUpon>RSEmpChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\RS\RSOprt.resx">
+      <Link>RSOprt.resx</Link>
+      <DependentUpon>RSOprt.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taurus\Taurus.csproj">
+      <Project>{892aa45b-9ebc-4d83-b32b-aac6b2181ade}</Project>
+      <Name>Taurus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

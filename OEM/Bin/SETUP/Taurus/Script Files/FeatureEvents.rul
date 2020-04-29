@@ -1,0 +1,71 @@
+export prototype MSDE_Installed();
+function MSDE_Installed()
+    number nvServiceState;
+    BOOL bStartService;  
+    string szMSDE, szAction, szLine, szServiceName, szKey;
+begin
+    SdShowMsg(@ID_STRING9, TRUE);
+    szMSDE = TARGETDIR + "\\MSDE\\";
+    Ex_WriteIni("Public", "DBType", "2");
+    if (Ex_CheckSqlServer()) then
+        DeleteProgramFolder(szMSDE);
+    else
+        szAction = TARGETDIR + "\\MSDE\\Helper.exe";
+        szLine = TARGETDIR + "\\MSDE\\SqlRun01.msi /qn";
+        if (LaunchAppAndWait(szAction, szLine, WAIT) < 0) then 
+            MessageBox(@ID_STRING11, SEVERE);
+        else
+            szServiceName = "MSSQL$MSDE";
+            if (ServiceGetServiceState(szServiceName, nvServiceState) >= ISERR_SUCCESS) then
+                ServiceStartService(szServiceName, "");
+            endif;  
+            szServiceName = "SQLAgent$MSDE";
+            if (ServiceGetServiceState(szServiceName, nvServiceState) >= ISERR_SUCCESS) then
+                RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+                szKey = "SYSTEM\\CurrentControlSet\\Services\\" + szServiceName;
+                RegDBSetKeyValueEx(szKey, "Start", REGDB_NUMBER, "2", -1);
+                ServiceStartService(szServiceName, "");
+            endif;     
+            DeleteFolderIcon(FOLDER_STARTUP, "Service Manager");
+            DeleteProgramFolder(szMSDE);
+        endif;
+    endif;
+    SdShowMsg("", FALSE);
+end;
+
+export prototype MSDE_UnInstalling();
+function MSDE_UnInstalling()
+    string sKey, sValue, sData, szServiceName, sBin, sParam;
+    number nResult, nType, nSize, nvServiceState, nPos, nLength;
+begin           
+    nType = REGDB_STRING;
+    nSize = -1;
+    sKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{E09B48B5-E141-427A-AB0C-D3605127224A}";
+    sValue = "UninstallString";
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE); 
+    nResult = RegDBGetKeyValueEx(sKey, sValue, nType, sData, nSize); 
+    if (nResult < 0) then
+        return FALSE;
+    endif;
+    SdShowMsg(@ID_STRING14, TRUE);
+    szServiceName = "SQLAgent$MSDE";
+    if (ServiceGetServiceState(szServiceName, nvServiceState) >= ISERR_SUCCESS) then
+        if (nvServiceState == SERVICE_RUNNING) then
+            ServiceStopService(szServiceName);
+        endif;
+    endif;  
+    szServiceName = "MSSQL$MSDE";
+    if (ServiceGetServiceState(szServiceName, nvServiceState) >= ISERR_SUCCESS) then
+        if (nvServiceState == SERVICE_RUNNING) then
+            ServiceStopService(szServiceName);
+        endif;
+    endif;  
+    nPos = StrFind(sData, "/");
+    nLength = StrLength(sData);
+    StrSub(sBin, sData, 0, nPos);
+    StrSub(sParam, sData, nPos, nLength - nPos);
+    sParam = sParam + ' /qn';
+    LaunchAppAndWait(sBin, sParam, WAIT);
+    SdShowMsg("", FALSE);
+    return TRUE;
+end;

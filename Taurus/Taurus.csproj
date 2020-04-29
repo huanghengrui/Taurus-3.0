@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892AA45B-9EBC-4D83-B32B-AAC6B2181ADE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>Taurus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Taurus.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\SysWOW64\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACCESS.cs" />
+    <Compile Include="ACCESS_GZ.cs" />
+    <Compile Include="ACCESS_KQ.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="BaseDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDate.Designer.cs">
+      <DependentUpon>BaseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDialog.Designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChild.designer.cs">
+      <DependentUpon>BaseMDIChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChildGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChildGrid.designer.cs">
+      <DependentUpon>BaseMDIChildGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChildReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChildReport.designer.cs">
+      <DependentUpon>BaseMDIChildReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChildReportPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChildReportPrint.designer.cs">
+      <DependentUpon>BaseMDIChildReportPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChildReportTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChildReportTree.designer.cs">
+      <DependentUpon>BaseMDIChildReportTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMDIChildTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMDIChildTree.designer.cs">
+      <DependentUpon>BaseMDIChildTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseSelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseSelectEmp.designer.cs">
+      <DependentUpon>BaseSelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseShowMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseShowMsg.Designer.cs">
+      <DependentUpon>BaseShowMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BellTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BellTime.designer.cs">
+      <DependentUpon>BellTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridCheck.cs" />
+    <Compile Include="FKAttend.cs" />
+    <Compile Include="FKFirmwareVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKFirmwareVer.designer.cs">
+      <DependentUpon>FKFirmwareVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FpReader.cs" />
+    <Compile Include="frmFpReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFpReader.designer.cs">
+      <DependentUpon>frmFpReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HardInfo.cs" />
+    <Compile Include="JsonParsing.cs" />
+    <Compile Include="MacDataFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MacDataFormat.designer.cs">
+      <DependentUpon>MacDataFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MacInfoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MacInfoAdd.designer.cs">
+      <DependentUpon>MacInfoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PowerSetupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PowerSetupEdit.designer.cs">
+      <DependentUpon>PowerSetupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassTime.designer.cs">
+      <DependentUpon>PassTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassTimeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassTimeAdd.designer.cs">
+      <DependentUpon>PassTimeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PowerSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PowerSetup.designer.cs">
+      <DependentUpon>PowerSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PowerSetupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PowerSetupAdd.designer.cs">
+      <DependentUpon>PowerSetupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubDevGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubDevGroup.Designer.cs">
+      <DependentUpon>PubDevGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubDisplay.designer.cs">
+      <DependentUpon>PubDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubPreview.designer.cs">
+      <DependentUpon>PubPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubReportLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubReportLog.designer.cs">
+      <DependentUpon>PubReportLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectDate.designer.cs">
+      <DependentUpon>PubSelectDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectDevGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectDevGroup.Designer.cs">
+      <DependentUpon>PubSelectDevGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectEmp.designer.cs">
+      <DependentUpon>PubSelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectEmpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectEmpList.designer.cs">
+      <DependentUpon>PubSelectEmpList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectMacSN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectMacSN.Designer.cs">
+      <DependentUpon>PubSelectMacSN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SatrHttpServer.cs" />
+    <Compile Include="SaveDataToDatabase.cs" />
+    <Compile Include="SeaHttpServer.cs" />
+    <Compile Include="SeaJson.cs" />
+    <Compile Include="SelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectEmp.designer.cs">
+      <DependentUpon>SelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYDataClear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYDataClear.designer.cs">
+      <DependentUpon>SYDataClear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYDataType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYDataType.designer.cs">
+      <DependentUpon>SYDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYDataUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYDataUpdate.designer.cs">
+      <DependentUpon>SYDataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYDataRest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYDataRest.designer.cs">
+      <DependentUpon>SYDataRest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYDataBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYDataBack.designer.cs">
+      <DependentUpon>SYDataBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBConnect.designer.cs">
+      <DependentUpon>DBConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBPathSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBPathSelect.designer.cs">
+      <DependentUpon>DBPathSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exception.designer.cs">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message.designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSSQL.cs" />
+    <Compile Include="PubDataIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubDataIn.designer.cs">
+      <DependentUpon>PubDataIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PubSelectDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PubSelectDepart.designer.cs">
+      <DependentUpon>PubSelectDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RowMergeView.designer.cs">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYOption.designer.cs">
+      <DependentUpon>SYOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYPassword.designer.cs">
+      <DependentUpon>SYPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYPower.designer.cs">
+      <DependentUpon>SYPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYPowerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYPowerAdd.designer.cs">
+      <DependentUpon>SYPowerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYRegister.designer.cs">
+      <DependentUpon>SYRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Navbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Navbar.designer.cs">
+      <DependentUpon>UC_Navbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PanelMuen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PanelMuen.designer.cs">
+      <DependentUpon>UC_PanelMuen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDate.resx">
+      <DependentUpon>BaseDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChild.resx">
+      <DependentUpon>BaseMDIChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChildGrid.resx">
+      <DependentUpon>BaseMDIChildGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChildReport.resx">
+      <DependentUpon>BaseMDIChildReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChildReportPrint.resx">
+      <DependentUpon>BaseMDIChildReportPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChildReportTree.resx">
+      <DependentUpon>BaseMDIChildReportTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMDIChildTree.resx">
+      <DependentUpon>BaseMDIChildTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseSelectEmp.resx">
+      <DependentUpon>BaseSelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseShowMsg.resx">
+      <DependentUpon>BaseShowMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BellTime.resx">
+      <DependentUpon>BellTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FKFirmwareVer.resx">
+      <DependentUpon>FKFirmwareVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFpReader.resx">
+      <DependentUpon>frmFpReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MacDataFormat.resx">
+      <DependentUpon>MacDataFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MacInfoAdd.resx">
+      <DependentUpon>MacInfoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerSetupEdit.resx">
+      <DependentUpon>PowerSetupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassTime.resx">
+      <DependentUpon>PassTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassTimeAdd.resx">
+      <DependentUpon>PassTimeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerSetup.resx">
+      <DependentUpon>PowerSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerSetupAdd.resx">
+      <DependentUpon>PowerSetupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubDevGroup.resx">
+      <DependentUpon>PubDevGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubDisplay.resx">
+      <DependentUpon>PubDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubPreview.resx">
+      <DependentUpon>PubPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubReportLog.resx">
+      <DependentUpon>PubReportLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectDate.resx">
+      <DependentUpon>PubSelectDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectDevGroup.resx">
+      <DependentUpon>PubSelectDevGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectEmp.resx">
+      <DependentUpon>PubSelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectEmpList.resx">
+      <DependentUpon>PubSelectEmpList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectMacSN.resx">
+      <DependentUpon>PubSelectMacSN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectEmp.resx">
+      <DependentUpon>SelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYDataClear.resx">
+      <DependentUpon>SYDataClear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYDataType.resx">
+      <DependentUpon>SYDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYDataUpdate.resx">
+      <DependentUpon>SYDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYDataRest.resx">
+      <DependentUpon>SYDataRest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYDataBack.resx">
+      <DependentUpon>SYDataBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBConnect.resx">
+      <DependentUpon>DBConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBPathSelect.resx">
+      <DependentUpon>DBPathSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exception.resx">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubDataIn.resx">
+      <DependentUpon>PubDataIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PubSelectDepart.resx">
+      <DependentUpon>PubSelectDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RowMergeView.resx">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYOption.resx">
+      <DependentUpon>SYOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYPassword.resx">
+      <DependentUpon>SYPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYPower.resx">
+      <DependentUpon>SYPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYPowerAdd.resx">
+      <DependentUpon>SYPowerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SYRegister.resx">
+      <DependentUpon>SYRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Navbar.resx">
+      <DependentUpon>UC_Navbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PanelMuen.resx">
+      <DependentUpon>UC_PanelMuen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxgrdesLib">
+      <Guid>{0CDAC26E-8F92-47EE-9E2E-844DBF78703A}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxgrproLib">
+      <Guid>{715CBE0F-4F50-46EF-B009-CACED3A5C868}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxRealSvrOcxTcpLib">
+      <Guid>{86683A0C-A3FA-4412-B044-51B918DBEE5C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="grdesLib">
+      <Guid>{0CDAC26E-8F92-47EE-9E2E-844DBF78703A}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="grproLib">
+      <Guid>{715CBE0F-4F50-46EF-B009-CACED3A5C868}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="HSCPID">
+      <Guid>{400E2B25-B69D-44CF-A332-D94F5AF5D535}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="RealSvrOcxTcpLib">
+      <Guid>{86683A0C-A3FA-4412-B044-51B918DBEE5C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

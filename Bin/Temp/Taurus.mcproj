@@ -1,0 +1,90 @@
+[Version]=3.0
+[SaveDirectory]=D:\C#\Taurus\bin\Temp
+[RuntimeName]=Taurum.dll
+[RunBat]=
+
+[Encrypt All Method]=1
+[Runtime Libaray Combination]=0
+[Encrypt User Strings]=0
+[Encrypt Blob Heap]=1
+[Encrypt Managed Resources]=1
+[Encrypt New Methods]=0
+[Anti ILdasm]=1
+[Support Windows64 Bit]=1
+[Visual Studio 2008]=0
+
+[AssemblyName]=Auto,No,D:\C#\Taurus\Bin\Taurus.RS.dll,[%SavePath%]
+[AssemblyName]=Auto,No,D:\C#\Taurus\Bin\Taurus.exe,[%SavePath%]
+[AssemblyName]=Auto,No,D:\C#\Taurus\Bin\Taurus.GZ.dll,[%SavePath%]
+[AssemblyName]=Auto,No,D:\C#\Taurus\Bin\Taurus.KQ.dll,[%SavePath%]
+
+--------------------------------------------------
+[StrongName]=
+[SNPassword]=
+[StrongNameAll]=0
+[Web_Optimize]=0
+[Web_UnloadRuntime]=0
+[Web_SaveDirectory]=
+[Web_SaveDefault]=0
+[License_Enabled]=0
+[License_Type]=1
+[License_Days]=
+[License_RunCounts]=
+[License_DateStart]=2012-06-04
+[License_DateEnd]=2012-06-04
+[License_TrialAlert]=0
+[License_TrialMessage]=您的试用已经到期,请购买正式版!
+
+--------------------------------------------------
+[MaxtoCodeInjectClassName]=InfaceTaurus
+[RuntimeMajorVersion]=3
+[RuntimeMinorVersion]=4
+[RuntimeBuild]=4
+[RuntimeSubBuild]=0
+[RuntimeComments]=Your Comments
+[RuntimeCompanyName]=Your CompanyName
+[RuntimeFileDescription]=The file Description
+[RuntimeLegalCopyRight]=(C) CompanyName Corporation.  All rights reserved.
+[RuntimeProductName]=Protector
+
+--------------------------------------------------
+[ConfusionOptions]=D:\C#\Taurus\Bin\Taurus.RS.dll
+{
+	[ClassConfusion]=1
+	[ClassConfusionType]=1
+	[MetaDataConfusion]=0
+	[CodeConfusion]=1
+	[ParamConfusion]=1
+	[StrongNames]=
+}
+
+[ConfusionOptions]=D:\C#\Taurus\Bin\Taurus.exe
+{
+	[ClassConfusion]=1
+	[ClassConfusionType]=1
+	[MetaDataConfusion]=0
+	[CodeConfusion]=1
+	[ParamConfusion]=1
+	[StrongNames]=
+}
+
+[ConfusionOptions]=D:\C#\Taurus\Bin\Taurus.GZ.dll
+{
+	[ClassConfusion]=1
+	[ClassConfusionType]=1
+	[MetaDataConfusion]=0
+	[CodeConfusion]=1
+	[ParamConfusion]=1
+	[StrongNames]=
+}
+
+[ConfusionOptions]=D:\C#\Taurus\Bin\Taurus.KQ.dll
+{
+	[ClassConfusion]=1
+	[ClassConfusionType]=1
+	[MetaDataConfusion]=0
+	[CodeConfusion]=1
+	[ParamConfusion]=1
+	[StrongNames]=
+}
+

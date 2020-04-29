@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E666E1D-5A7B-4C78-A03B-A27AE092EE36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>TaurusMJ.MJReport</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.grdesLib">
+      <HintPath>..\Bin\AxInterop.grdesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.grproLib">
+      <HintPath>..\Bin\AxInterop.grproLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.grdesLib">
+      <HintPath>..\Bin\Interop.grdesLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.grproLib">
+      <HintPath>..\Bin\Interop.grproLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Taurus\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportAlarmData.cs">
+      <Link>MJReportAlarmData.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportAlarmData.designer.cs">
+      <Link>MJReportAlarmData.designer.cs</Link>
+      <DependentUpon>MJReportAlarmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportMJData.cs">
+      <Link>MJReportMJData.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportMJData.designer.cs">
+      <Link>MJReportMJData.designer.cs</Link>
+      <DependentUpon>MJReportMJData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportOpenData.cs">
+      <Link>MJReportOpenData.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJReportOpenData.designer.cs">
+      <Link>MJReportOpenData.designer.cs</Link>
+      <DependentUpon>MJReportOpenData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJSeaPersonIDCard.cs">
+      <Link>MJSeaPersonIDCard.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\MJReport\MJSeaPersonIDCard.designer.cs">
+      <Link>MJSeaPersonIDCard.designer.cs</Link>
+      <DependentUpon>MJSeaPersonIDCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\MJReport\ShowForms.cs">
+      <Link>ShowForms.cs</Link>
+    </Compile>
+    <EmbeddedResource Include="..\..\MJReport\MJReportAlarmData.resx">
+      <Link>MJReportAlarmData.resx</Link>
+      <DependentUpon>MJReportAlarmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\MJReport\MJReportMJData.resx">
+      <Link>MJReportMJData.resx</Link>
+      <DependentUpon>MJReportMJData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\MJReport\MJReportOpenData.resx">
+      <Link>MJReportOpenData.resx</Link>
+      <DependentUpon>MJReportOpenData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\MJReport\MJSeaPersonIDCard.resx">
+      <Link>MJSeaPersonIDCard.resx</Link>
+      <DependentUpon>MJSeaPersonIDCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taurus\TaurusMJ.csproj">
+      <Project>{892aa45b-9ebc-4d83-b32b-aac6b2181ade}</Project>
+      <Name>TaurusMJ</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

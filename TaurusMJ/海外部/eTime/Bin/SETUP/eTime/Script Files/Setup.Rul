@@ -1,0 +1,645 @@
+//===========================================================================
+//
+//  File Name:    Setup.rul
+//
+//  Description:  Blank setup main script file
+//
+//  Comments:     Blank setup is an empty setup project. If you want to
+//                  create a new project via. step-by step instructions use the
+//                  Project Assistant.
+//
+//===========================================================================
+
+// Included header files ----------------------------------------------------
+#include "ifx.h"
+
+string SetupDBType;  
+string SetupMJ;
+string SetupKQ;    
+string SetupGZ;   
+string SetupSEA;  
+string SetupSTAR;
+
+export prototype BOOL Ex_GetDrive(STRING);
+export prototype BOOL Ex_WriteMyIni(STRING, STRING, STRING);
+export prototype BOOL Ex_WriteIni(STRING, STRING, STRING);
+export prototype BOOL Ex_CheckSqlServer();
+//---------------------------------------------------------------------------
+// OnShowUI
+//
+// This function drives the UI sequence and file transfer of the setup.
+// 
+// The OnShowUI event is called directly by the framework to initiate
+// the UI sequence and file transfer of the setup. By default this event
+// displays UI that informs the end user that the maintenance setup has been
+// completed successfully.
+// 
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnShowUI()
+    BOOL bMaintenanceMode, bUpdateMode;
+    string szIgnore, szTitle;
+begin
+    // Enable dialog caching
+    Enable( DIALOGCACHE );
+      
+    // Determine what events to show.
+    bUpdateMode    = FALSE;
+    bMaintenanceMode = FALSE;
+    
+    // Remove this to disabled update mode.
+    if( UPDATEMODE ) then
+        bUpdateMode = TRUE;
+    endif;
+
+    // Remove this to disable maintenance mode.
+    if ( MAINTENANCE ) then
+        bMaintenanceMode = TRUE;
+    endif;
+
+    // Show appropriate UI
+
+    // TODO: Enable if you want to enable background etc.
+    //if ( LoadStringFromStringTable( "TITLE_MAIN", szTitle ) < ISERR_SUCCESS ) then // Load the title string.
+    //    szTitle = IFX_SETUP_TITLE;
+    //endif;
+    //SetTitle( szTitle, 24, WHITE );
+    //Enable( FULLWINDOWMODE );                           
+    //Enable( BACKGROUND );
+    //SetColor( BACKGROUND, RGB( 0, 128, 128 ) );
+    if( bUpdateMode ) then
+        OnUpdateUIBefore();
+    else
+        if ( bMaintenanceMode ) then
+            OnMaintUIBefore();
+        else
+            OnFirstUIBefore();
+        endif;
+    endif;
+
+    // Move Data
+    OnMoveData();
+        
+    if( bUpdateMode ) then
+        OnUpdateUIAfter();
+    else
+        if ( bMaintenanceMode ) then
+            OnMaintUIAfter();
+        else
+            OnFirstUIAfter();
+        endif;
+    endif;
+
+    // Disable dialog caching
+    Disable(DIALOGCACHE);
+end;
+//---------------------------------------------------------------------------
+// OnUninstall
+//
+// The OnUninstall event is called when the setup is run with the -uninst
+// switch, in this case this is the only event that will be called.
+//---------------------------------------------------------------------------
+function OnUninstall()
+    string szIgnore, szMsg;
+    number nResult;
+    BOOL bOpt1, bOpt2;
+begin
+
+    // Hide the initial progress dialog.
+    Disable( DIALOGCACHE );
+
+    // Added in InstallShield 15 - Show an appropriate error message if
+    // -uninst is specified and the product is not installed.
+    if( !MAINTENANCE ) then
+        szMsg = SdLoadString( IDS_IFX_ERROR_PRODUCT_NOT_INSTALLED_UNINST );
+           SdSubstituteProductInfo( szMsg );
+        MessageBox( szMsg, SEVERE );
+        abort;
+    endif;
+    
+    // Show Uninstall Confirmation Dialog
+    if( MessageBox( SdLoadString( IFX_MAINTUI_MSG ), MB_YESNO ) != IDYES ) then
+        abort;
+    endif;
+
+    // Remove all features.
+    FeatureRemoveAllInMediaAndLog();
+
+    // Added in 11.0, disable the cancel button during uninstall.
+    if( REMOVEALLMODE ) then
+        Disable( CANCELBUTTON );
+    endif;
+    
+    // Added in 11.0 - Set appropriate StatusEx static text.
+    // Moved in 12.1 - Set before calling Enable( STATUSEX ) to ensure proper product name updating.
+    SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_REMOVEALL ) );
+
+    // Show Status
+    SetStatusWindow( 0, "" );
+    Enable( STATUSEX );
+    StatusUpdate( ON, 100 );
+
+
+    // Uninstall
+    nResult = FeatureTransferData( MEDIA );
+
+    // Handle move data error and abort if error occured.
+    if( nResult < ISERR_SUCCESS ) then
+        OnComponentError();
+        abort;
+    endif;
+    
+    // Disable Status
+    Disable( STATUSEX );
+
+    // Show final dialog.
+    //if ( BATCH_INSTALL ) then
+    //    SdFinishReboot( SdLoadString(IFX_SDFINISH_REMOVE_TITLE), SdLoadString(IFX_SDFINISH_REMOVE_MSG2), SYS_BOOTMACHINE, "", 0 );
+    //else    
+        SdFinish( SdLoadString(IFX_SDFINISH_REMOVE_TITLE), SdLoadString(IFX_SDFINISH_REMOVE_MSG1), "", "" , "", bOpt1 , bOpt2 );
+    //endif;
+ 
+end;
+//---------------------------------------------------------------------------
+// OnFirstUIAfter
+//
+// First Install UI Sequence - After Move Data
+//
+// The OnFirstUIAfter event called by OnShowUI after the file transfer
+// of the setup when the setup is running in first install mode. By default
+// this event displays UI that informs the end user that the setup has been
+// completed successfully.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnFirstUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2;
+    NUMBER bvOpt1, bvOpt2;
+begin
+
+    ShowObjWizardPages(NEXT);
+    
+    szTitle = "";
+    szMsg1 = ""; 
+    szMsg2 = "";
+    szOpt1 = "";
+    szOpt2 = "";
+    bvOpt1   = FALSE;
+    bvOpt2   = FALSE;    
+    Ex_WriteIni("Public", "DBType", SetupDBType);       
+    Ex_WriteIni("Public", "ShowMJ", SetupMJ);
+    Ex_WriteIni("Public", "ShowKQ", SetupKQ);   
+    Ex_WriteIni("Public", "ShowGZ", SetupGZ);  
+    Ex_WriteIni("Public", "ShowSEA", SetupSEA); 
+    Ex_WriteIni("Public", "ShowSTAR", SetupSTAR);
+    //{{IS_SCRIPT_TAG(Dlg_SdDinishEx)    
+    //if ( BATCH_INSTALL ) then
+        //SdFinishReboot ( szTitle , szMsg1 , SYS_BOOTMACHINE , szMsg2 , 0 );
+    //else
+        SdFinish ( szTitle , szMsg1 , szMsg2 , szOpt1 , szOpt2 , bvOpt1 , bvOpt2 );
+    //endif;
+    //}}IS_SCRIPT_TAG(Dlg_SdDinishEx)    
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIAfter
+//
+// The OnMaintUIAfter event called by OnShowUI after the file transfer
+// of the setup when the setup is running in maintenance mode. By default
+// this event displays UI that informs the end user that the maintenance setup
+// has been completed successfully.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnMaintUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2;
+    NUMBER bvOpt1, bvOpt2;
+begin
+
+    ShowObjWizardPages(NEXT);
+    
+    // Added - Version 9.5 - Use appropriate strings for complete
+    // uninstall.
+    if( REMOVEALLMODE ) then
+        szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
+        szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
+    else
+        szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
+        szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+    endif;
+
+    szMsg2 = "";    
+    szOpt1 = "";
+    szOpt2 = "";
+    bvOpt1   = FALSE;
+    bvOpt2   = FALSE;    
+
+    //if ( BATCH_INSTALL ) then
+        //SdFinishReboot ( szTitle , szMsg1 , SYS_BOOTMACHINE , szMsg2 , 0 );
+    //else    
+           SdFinish ( szTitle , szMsg1 , szMsg2 , szOpt1 , szOpt2 , bvOpt1 , bvOpt2 );
+    //endif;
+end;
+//---------------------------------------------------------------------------
+// OnUpdateUIAfter
+//
+// Update Mode UI Sequence - After Move Data
+//
+// The OnUpdateUIAfter event called by OnShowUI after the file transfer
+// of the setup when the setup is running in update mode. By default
+// this event displays UI that informs the end user that the maintenance setup
+// has been completed successfully.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnUpdateUIAfter()
+    string szTitle, szMsg1, szMsg2, szOpt1, szOpt2;
+    BOOL bOpt1, bOpt2;
+begin
+
+    ShowObjWizardPages(NEXT);
+    
+    szTitle = SdLoadString(IDS_IFX_SDFINISH_UPDATE_TITLE);    
+    szMsg1  = SdLoadString(IDS_IFX_SDFINISH_UPDATE_MSG1);
+    szMsg2 = "";    
+    szOpt1 = "";
+    szOpt2 = "";
+    bOpt1   = FALSE;
+    bOpt2   = FALSE;    
+    
+    //if ( BATCH_INSTALL ) then
+        //SdFinishReboot ( szTitle , szMsg1 , SYS_BOOTMACHINE , szMsg2 , 0 );
+    //else    
+           SdFinish ( szTitle , szMsg1 , szMsg2 , szOpt1 , szOpt2 , bOpt1 , bOpt2 );
+    //endif;
+end;
+//---------------------------------------------------------------------------
+// OnBegin
+//
+// The OnBegin event is called directly by the framework after the setup
+// initializes. Note that this event will be called AFTER "Initialization"
+// events (i.e.) OnSetTARGETDIR, OnCheckMediaPassword.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnBegin()
+begin
+	IFX_PRODUCT_DISPLAY_NAME = @ID_STRING7;
+  	IFX_PRODUCT_NAME = IFX_PRODUCT_DISPLAY_NAME;
+    IFX_SETUP_TITLE = IFX_PRODUCT_NAME;
+end;
+//---------------------------------------------------------------------------                                                                        
+// OnFirstUIBefore
+//
+// First Install UI Sequence - Before Move Data
+//
+// The OnFirstUIBefore event is called by OnShowUI when the setup is
+// running in first install mode. By default this event displays UI allowing
+// the end user to specify installation parameters.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnFirstUIBefore()
+    number nResult, nLevel, nSize, nSetupType;
+    string szTitle, szMsg, szOpt1, szOpt2, szLicenseFile;
+    string szName, szCompany, szTargetPath, szDir, szFeatures;
+    BOOL bLicenseAccepted;  
+    string szDrive, szText1, szText2, szText3;  
+    string MJDrive, MJText, KQText, SEAText, STARText, GZText;
+    number nvCheck1, nvCheck2, nvCheck3;  
+    number MJCheck, KQCheck, SEACheck, STARCheck, GZCheck;
+    string szQuestion, szSQLsvr, szSQLusr, szSQLpwd;
+begin     
+    // Added in InstallShield 15 - Show an appropriate error message if
+    // -removeonly is specified and the product is not installed.
+    if( REMOVEONLY ) then
+        Disable( DIALOGCACHE );
+        szMsg = SdLoadString( IDS_IFX_ERROR_PRODUCT_NOT_INSTALLED_UNINST );
+           SdSubstituteProductInfo( szMsg );
+        MessageBox( szMsg, SEVERE );
+        abort;
+    endif;
+   
+    szDrive = "C:";
+    if (Ex_GetDrive("Z:")) then
+        szDrive = "Z:"; 
+    elseif (Ex_GetDrive("Y:")) then
+        szDrive = "Y:";
+    elseif (Ex_GetDrive("X:")) then
+        szDrive = "X:";
+    elseif (Ex_GetDrive("W:")) then
+        szDrive = "W:";
+    elseif (Ex_GetDrive("V:")) then
+        szDrive = "V:";
+    elseif (Ex_GetDrive("U:")) then
+        szDrive = "U:";
+    elseif (Ex_GetDrive("T:")) then
+        szDrive = "T:";
+    elseif (Ex_GetDrive("S:")) then
+        szDrive = "S:";
+    elseif (Ex_GetDrive("R:")) then
+        szDrive = "R:";
+    elseif (Ex_GetDrive("Q:")) then
+        szDrive = "Q:";
+    elseif (Ex_GetDrive("P:")) then
+        szDrive = "P:";
+    elseif (Ex_GetDrive("O:")) then
+        szDrive = "O:";
+    elseif (Ex_GetDrive("N:")) then
+        szDrive = "N:";
+    elseif (Ex_GetDrive("M:")) then
+        szDrive = "M:";
+    elseif (Ex_GetDrive("L:")) then
+        szDrive = "L:";
+    elseif (Ex_GetDrive("K:")) then
+        szDrive = "K:";
+    elseif (Ex_GetDrive("J:")) then
+        szDrive = "J:";
+    elseif (Ex_GetDrive("I:")) then
+        szDrive = "I:";
+    elseif (Ex_GetDrive("H:")) then
+        szDrive = "H:";
+    elseif (Ex_GetDrive("G:")) then
+        szDrive = "G:";
+    elseif (Ex_GetDrive("F:")) then
+        szDrive = "F:";
+    elseif (Ex_GetDrive("E:")) then
+        szDrive = "E:";
+    elseif (Ex_GetDrive("D:")) then
+        szDrive = "D:";
+    endif;
+    
+    TARGETDIR = szDrive + "\\eTimeMJ V3.0";
+    
+    ComponentSetTarget(MEDIA, "<Root>", "C://");
+       
+    nSetupType = COMPLETE;    
+    szDir = TARGETDIR;
+    szName = "";
+    szCompany = "";
+    bLicenseAccepted = FALSE;
+
+// Beginning of UI Sequence
+Dlg_Start:
+    nResult = 0;
+
+Dlg_SdWelcome:
+    szTitle = "";
+    szMsg = "";
+    //{{IS_SCRIPT_TAG(Dlg_SdWelcome)
+    nResult = SdWelcome( szTitle, szMsg );
+    //}}IS_SCRIPT_TAG(Dlg_SdWelcome)
+    if (nResult = BACK) goto Dlg_Start;
+
+Dlg_SdAskDestPath2: 
+    szTitle = "";
+    szMsg = "";
+    nResult = SdAskDestPath2( szTitle, szMsg, szDir );
+    if (nResult = BACK) goto Dlg_SdWelcome;
+    TARGETDIR = szDir;
+
+Dlg_SdAskType:  
+    szTitle = "";
+    szMsg = "";
+    szText1 = @ID_STRING3;
+    szText2 = @ID_STRING10;
+    szText3 = @ID_STRING1;
+    nvCheck1 = TRUE;
+    SetupDBType = "0";
+    nResult = AskOptions(EXCLUSIVE, szMsg, szText1, nvCheck1, szText3, nvCheck3);
+    if (nResult = BACK) goto Dlg_SdAskDestPath2;
+    if (nvCheck1) then
+      SetupDBType = "0";
+    elseif (nvCheck2) then
+      SetupDBType = "2";
+    elseif (nvCheck3) then
+      SetupDBType = "1";
+    endif;
+    FeatureSelectItem (MEDIA, "MSDE", FALSE);
+    if (nvCheck2) then
+        FeatureSelectItem (MEDIA, "MSDE", TRUE);
+    endif;   
+     //±¸×¢ÃÅ½û¿¼ÇÚÄ£¿é
+  Dlg_SdAskType2:  
+    szTitle = "";
+    szMsg = "";
+    MJText = @IDS__DialogId_10105_ControlId_601;
+    KQText = @IDS__DialogId_10105_ControlId_602;
+    SEAText = @IDS__DialogId_10105_ControlId_603; 
+    STARText = @IDS__DialogId_10105_ControlId_604; 
+    GZText = @IDS__DialogId_10105_ControlId_605;
+    KQCheck = TRUE;
+    MJCheck = TRUE;    
+    SEACheck = TRUE;    
+    STARCheck = TRUE;  
+    GZCheck = TRUE;
+    nResult = AskOptions(NONEXCLUSIVE, szMsg, MJText, MJCheck, KQText, KQCheck, SEAText, SEACheck, STARText, STARCheck, GZText, GZCheck);
+    if (nResult = BACK) goto Dlg_SdAskType;
+    if (MJCheck) then
+      SetupMJ = "1";
+    elseif (!MJCheck) then
+      SetupMJ = "0"; 
+     endif;
+    if (KQCheck) then
+      SetupKQ = "1";
+    elseif (!KQCheck) then
+      SetupKQ = "0";
+    endif;   
+     if (SEACheck) then
+      SetupSEA = "1";
+    elseif (!SEACheck) then
+      SetupSEA = "0";
+    endif;   
+    if (STARCheck) then
+      SetupSTAR = "1";
+    elseif (!STARCheck) then
+      SetupSTAR = "0";
+    endif; 
+        if (GZCheck) then
+      SetupGZ = "1";
+    elseif (!GZCheck) then
+      SetupGZ = "0";
+    endif;   
+ 
+            
+Dlg_SdStartCopy2:
+    szTitle = "";
+    szMsg = "";
+    //{{IS_SCRIPT_TAG(Dlg_SdStartCopy2)    
+    nResult = SdStartCopy2( szTitle, szMsg );    
+    //}}IS_SCRIPT_TAG(Dlg_SdStartCopy2)
+    if (nResult = BACK) goto Dlg_SdAskType2;
+
+    // Added in 11.0 - Set appropriate StatusEx static text.
+    SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_FIRSTUI ) );
+ 
+    return 0;
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIBefore
+//
+// Maintenance UI Sequence - Before Move Data
+//
+// The OnMaintUIBefore event is called by OnShowUI when the setup is
+// running in maintenance mode. By default this event displays UI that
+// allows the end user to add or remove features, repair currently
+// installed features or uninstall the application.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnMaintUIBefore()
+    number nResult, nType;
+    string szTitle, szMsg;
+begin
+    
+    // nType defaults to MODIFY.
+    nType = REMOVEALL;
+
+    //Initialize SQL
+    OnSQLServerInitializeMaint();
+
+// Beginning of UI Sequence
+Dlg_Start:
+
+    // Added in Version 9.5 - Support for REMOVEONLY option.
+    if( !REMOVEONLY ) then
+        // In standard mode show maintenance dialog
+        Disable( BACKBUTTON );
+        nType = SdWelcomeMaint( szTitle, szMsg, nType );
+        Enable( BACKBUTTON );
+        nResult = NEXT;
+    else
+        // Hide the initial progress dialog as otherwise the user can
+        // click on it, and hide the MessageBox.
+        Disable( DIALOGCACHE );
+
+        // In RemoveOnly mode, set to remove.
+        nType = REMOVEALL;
+    endif;
+
+    // Show Uninstall Confirmation Dialog
+    if ( nType = REMOVEALL ) then
+        nResult = MessageBox( SdLoadString( IFX_MAINTUI_MSG ), MB_YESNO );
+        if (nResult != IDYES ) then
+            
+            if( REMOVEONLY ) then
+                // In REMOVEONLY mode, abort the setup.
+                abort;
+            else
+                // In non-REMOVEONLY mode, redisplay the previous dialog.
+                goto Dlg_Start;
+            endif;
+
+        endif;
+    endif;
+
+Dlg_SdFeatureTree:
+    if ( nType = MODIFY ) then
+        szTitle = "";
+        szMsg = SdLoadString( SD_STR_COMPONENT_MAINT_MSG );
+        nResult = SdFeatureTree( szTitle, szMsg, TARGETDIR, "", -1 );
+        if ( nResult = BACK ) goto Dlg_Start;
+    endif;
+
+Dlg_ObjDialogs:
+    nResult = ShowObjWizardPages( nResult );
+    if ( ( nResult = BACK ) && ( nType != MODIFY ) ) goto Dlg_Start;
+    if ( ( nResult = BACK ) && ( nType = MODIFY ) ) goto Dlg_SdFeatureTree;
+
+    switch(nType)
+
+        case REMOVEALL:
+                        
+            // Ensure that all previously installed features are removed.
+            FeatureRemoveAllInMediaAndLog();
+
+            // Added in 11.0 - Set appropriate StatusEx static text.
+            SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_REMOVEALL ) );
+        case REPAIR:
+                
+            // Changed for DevStudio 9, Disk1 files are now always updated when installed
+            // so when running from ADDREMOVE we need to prevent these files from being
+            // updated since this will result in files being updated that are locked by the setup.
+            // Updating these files when running from ADDREMOVE should not be needed since updates
+            // are not run directly from Add/Remove.
+            if( ADDREMOVE ) then
+                // Reinstall all previously installed features, except
+                // disk1 features.
+                FeatureUpdate( "" );
+            else
+                // Reinstall all previously installed features.
+                FeatureReinstall();
+            endif;
+
+            // Added in 11.0 - Set appropriate StatusEx static text.
+            SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_REPAIR ) );
+
+        case MODIFY:
+            
+            // Added in 11.0 - Set appropriate StatusEx static text.
+            SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_MODIFY ) );
+
+    endswitch;
+ 
+end;
+
+function BOOL Ex_GetDrive(szDrive)
+    _DISK_INFO di;
+begin
+    di.szDiskPath = szDrive; 
+    di.nInfoToQuery = DISK_INFO_QUERY_DRIVE_TYPE; 
+    if (GetDiskInfo(&di) == ISERR_SUCCESS) then
+        if (di.nDriveType == DRIVE_FIXED) then
+            return TRUE;
+        endif;
+    endif;
+    return FALSE;
+end;
+                      
+function BOOL Ex_WriteMyIni(szSection, szKey, szValue)
+    string szFile;
+begin
+    szFile = TARGETDIR + "\\MYSQL\\my.ini";
+    if (WriteProfString(szFile, szSection, szKey, szValue) < 0) then
+        return FALSE;
+    endif;
+    return TRUE;
+end;
+
+function BOOL Ex_WriteIni(szSection, szKey, szValue)
+    string szFile;
+begin             
+    szFile = TARGETDIR + "\\eTimeMJ.ini";   
+    if (WriteProfString(szFile, szSection, szKey, szValue) < 0) then
+        return FALSE;
+    endif;
+    return TRUE;
+end;                        
+
+function BOOL Ex_CheckSqlServer()
+    string sKey, sValue, sData;
+    number nResult, nType, nSize;
+begin           
+    nType = REGDB_STRING;
+    nSize = -1;
+    sKey = "Software\\Microsoft\\Microsoft SQL Server";
+    sValue = "InstalledInstances";
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE); 
+    nResult = RegDBGetKeyValueEx(sKey, sValue, nType, sData, nSize); 
+    if (nResult < 0) then
+        return FALSE;
+    endif;
+    if (StrFind(sData, "MSDE") >= 0) then
+        return TRUE;
+    else
+        return FALSE;
+    endif;
+end;
+
+#include "featureevents.rul"

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C4D0F81-9DDC-4930-96FA-CC589B7C616E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>eTimeMJ.STAR</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.grdesLib">
+      <HintPath>..\OEM\Bin\AxInterop.grdesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.grproLib">
+      <HintPath>..\OEM\Bin\AxInterop.grproLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.grdesLib">
+      <HintPath>..\OEM\Bin\Interop.grdesLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.grproLib">
+      <HintPath>..\OEM\Bin\Interop.grproLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OEM\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Taurus\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarNetParam.cs">
+      <Link>MJStarNetParam.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarNetParam.designer.cs">
+      <Link>MJStarNetParam.designer.cs</Link>
+      <DependentUpon>MJStarNetParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarOprt.cs">
+      <Link>MJStarOprt.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarOprt.designer.cs">
+      <Link>MJStarOprt.designer.cs</Link>
+      <DependentUpon>MJStarOprt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarParam.cs">
+      <Link>MJStarParam.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarParam.designer.cs">
+      <Link>MJStarParam.designer.cs</Link>
+      <DependentUpon>MJStarParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPower.cs">
+      <Link>MJStarPower.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPower.designer.cs">
+      <Link>MJStarPower.designer.cs</Link>
+      <DependentUpon>MJStarPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPowerAdd.cs">
+      <Link>MJStarPowerAdd.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPowerAdd.designer.cs">
+      <Link>MJStarPowerAdd.designer.cs</Link>
+      <DependentUpon>MJStarPowerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPowerEdit.cs">
+      <Link>MJStarPowerEdit.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\STAR\MJStarPowerEdit.designer.cs">
+      <Link>MJStarPowerEdit.designer.cs</Link>
+      <DependentUpon>MJStarPowerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\STAR\ShowForms.cs">
+      <Link>ShowForms.cs</Link>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarNetParam.resx">
+      <Link>MJStarNetParam.resx</Link>
+      <DependentUpon>MJStarNetParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarOprt.resx">
+      <Link>MJStarOprt.resx</Link>
+      <DependentUpon>MJStarOprt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarParam.resx">
+      <Link>MJStarParam.resx</Link>
+      <DependentUpon>MJStarParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarPower.resx">
+      <Link>MJStarPower.resx</Link>
+      <DependentUpon>MJStarPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarPowerAdd.resx">
+      <Link>MJStarPowerAdd.resx</Link>
+      <DependentUpon>MJStarPowerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\STAR\MJStarPowerEdit.resx">
+      <Link>MJStarPowerEdit.resx</Link>
+      <DependentUpon>MJStarPowerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taurus\eTimeMJ.csproj">
+      <Project>{892aa45b-9ebc-4d83-b32b-aac6b2181ade}</Project>
+      <Name>eTimeMJ</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

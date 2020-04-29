@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87EB8203-6D9F-4CF8-B17A-488E7F387BCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>eTime.KQ</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Bin\Taurus.KQ.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Bin\Taurus.KQ.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.grdesLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AxInterop.grproLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.grdesLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.grproLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\KQ\KQDataAssay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQDataAssay.designer.cs">
+      <DependentUpon>KQDataAssay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQDepShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQDepShift.designer.cs">
+      <DependentUpon>KQDepShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQDepShiftBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQDepShiftBatch.designer.cs">
+      <DependentUpon>KQDepShiftBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpDayOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpDayOff.designer.cs">
+      <DependentUpon>KQEmpDayOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpDayOffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpDayOffAdd.designer.cs">
+      <DependentUpon>KQEmpDayOffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpOtSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpOtSure.designer.cs">
+      <DependentUpon>KQEmpOtSure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpOtSureAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpOtSureAdd.designer.cs">
+      <DependentUpon>KQEmpOtSureAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpShift.designer.cs">
+      <DependentUpon>KQEmpShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpShiftBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpShiftBatch.designer.cs">
+      <DependentUpon>KQEmpShiftBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpSignCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpSignCard.designer.cs">
+      <DependentUpon>KQEmpSignCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpSignCardAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQEmpSignCardAdd.designer.cs">
+      <DependentUpon>KQEmpSignCardAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQHoliday.designer.cs">
+      <DependentUpon>KQHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQHolidayAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQHolidayAdd.designer.cs">
+      <DependentUpon>KQHolidayAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQInOutMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQInOutMode.designer.cs">
+      <DependentUpon>KQInOutMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportData.designer.cs">
+      <DependentUpon>KQReportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDataFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDataFilter.designer.cs">
+      <DependentUpon>KQReportDataFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDay.designer.cs">
+      <DependentUpon>KQReportDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDayDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportDayDetail.designer.cs">
+      <DependentUpon>KQReportDayDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportMonth.designer.cs">
+      <DependentUpon>KQReportMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportMonthDetail.cs">
+      <Link>KQReportMonthDetail.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportMonthDetail.designer.cs">
+      <Link>KQReportMonthDetail.designer.cs</Link>
+      <DependentUpon>KQReportMonthDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportRecords.designer.cs">
+      <DependentUpon>KQReportRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportTotal.designer.cs">
+      <DependentUpon>KQReportTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportWeek.cs">
+      <Link>KQReportWeek.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQReportWeek.designer.cs">
+      <Link>KQReportWeek.designer.cs</Link>
+      <DependentUpon>KQReportWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRule.designer.cs">
+      <DependentUpon>KQRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleAdd.designer.cs">
+      <DependentUpon>KQRuleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleCalc.designer.cs">
+      <DependentUpon>KQRuleCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleCalcAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleCalcAdd.designer.cs">
+      <DependentUpon>KQRuleCalcAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleDepart.designer.cs">
+      <DependentUpon>KQRuleDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleDepartAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleDepartAdd.designer.cs">
+      <DependentUpon>KQRuleDepartAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleEmp.designer.cs">
+      <DependentUpon>KQRuleEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleEmpAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQRuleEmpAdd.designer.cs">
+      <DependentUpon>KQRuleEmpAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShift.designer.cs">
+      <DependentUpon>KQShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftAdd.designer.cs">
+      <DependentUpon>KQShiftAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftRule.designer.cs">
+      <DependentUpon>KQShiftRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftRuleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQShiftRuleAdd.designer.cs">
+      <DependentUpon>KQShiftRuleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQWeekReportTotal.cs">
+      <Link>KQWeekReportTotal.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\KQ\KQWeekReportTotal.designer.cs">
+      <Link>KQWeekReportTotal.designer.cs</Link>
+      <DependentUpon>KQWeekReportTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\KQ\ShowForms.cs" />
+    <Compile Include="..\..\..\Taurus\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taurus\eTime.csproj">
+      <Project>{892AA45B-9EBC-4D83-B32B-AAC6B2181ADE}</Project>
+      <Name>eTime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\..\KQ\KQDataAssay.resx">
+      <DependentUpon>KQDataAssay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQDepShift.resx">
+      <DependentUpon>KQDepShift.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQDepShiftBatch.resx">
+      <DependentUpon>KQDepShiftBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpDayOff.resx">
+      <DependentUpon>KQEmpDayOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpDayOffAdd.resx">
+      <DependentUpon>KQEmpDayOffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpOtSure.resx">
+      <DependentUpon>KQEmpOtSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpOtSureAdd.resx">
+      <DependentUpon>KQEmpOtSureAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpShift.resx">
+      <DependentUpon>KQEmpShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpShiftBatch.resx">
+      <DependentUpon>KQEmpShiftBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpSignCard.resx">
+      <DependentUpon>KQEmpSignCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQEmpSignCardAdd.resx">
+      <DependentUpon>KQEmpSignCardAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQHoliday.resx">
+      <DependentUpon>KQHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQHolidayAdd.resx">
+      <DependentUpon>KQHolidayAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQInOutMode.resx">
+      <DependentUpon>KQInOutMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportData.resx">
+      <DependentUpon>KQReportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportDataFilter.resx">
+      <DependentUpon>KQReportDataFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportDay.resx">
+      <DependentUpon>KQReportDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportDayDetail.resx">
+      <DependentUpon>KQReportDayDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportMonth.resx">
+      <DependentUpon>KQReportMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportMonthDetail.resx">
+      <Link>KQReportMonthDetail.resx</Link>
+      <DependentUpon>KQReportMonthDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportRecords.resx">
+      <DependentUpon>KQReportRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportTotal.resx">
+      <DependentUpon>KQReportTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQReportWeek.resx">
+      <Link>KQReportWeek.resx</Link>
+      <DependentUpon>KQReportWeek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRule.resx">
+      <DependentUpon>KQRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleAdd.resx">
+      <DependentUpon>KQRuleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleCalc.resx">
+      <DependentUpon>KQRuleCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleCalcAdd.resx">
+      <DependentUpon>KQRuleCalcAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleDepart.resx">
+      <DependentUpon>KQRuleDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleDepartAdd.resx">
+      <DependentUpon>KQRuleDepartAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleEmp.resx">
+      <DependentUpon>KQRuleEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQRuleEmpAdd.resx">
+      <DependentUpon>KQRuleEmpAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQShift.resx">
+      <DependentUpon>KQShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQShiftAdd.resx">
+      <DependentUpon>KQShiftAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQShiftRule.resx">
+      <DependentUpon>KQShiftRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQShiftRuleAdd.resx">
+      <DependentUpon>KQShiftRuleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\KQ\KQWeekReportTotal.resx">
+      <Link>KQWeekReportTotal.resx</Link>
+      <DependentUpon>KQWeekReportTotal.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

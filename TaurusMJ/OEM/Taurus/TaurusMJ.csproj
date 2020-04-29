@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892AA45B-9EBC-4D83-B32B-AAC6B2181ADE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Taurus</RootNamespace>
+    <AssemblyName>TaurusMJ</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Taurus\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\ACCESS.cs" />
+    <Compile Include="..\..\..\Taurus\ACCESS_GZ.cs" />
+    <Compile Include="..\..\..\Taurus\ACCESS_KQ.cs" />
+    <Compile Include="..\..\..\Taurus\Base.cs" />
+    <Compile Include="..\..\..\Taurus\BaseDate.cs">
+      <Link>BaseDate.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseDate.designer.cs">
+      <Link>BaseDate.designer.cs</Link>
+      <DependentUpon>BaseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseDialog.Designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChild.designer.cs">
+      <DependentUpon>BaseMDIChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildGrid.designer.cs">
+      <DependentUpon>BaseMDIChildGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReport.designer.cs">
+      <DependentUpon>BaseMDIChildReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReportPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReportPrint.designer.cs">
+      <DependentUpon>BaseMDIChildReportPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReportTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildReportTree.designer.cs">
+      <DependentUpon>BaseMDIChildReportTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseMDIChildTree.designer.cs">
+      <DependentUpon>BaseMDIChildTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseSelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseSelectEmp.designer.cs">
+      <DependentUpon>BaseSelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseShowMsg.cs">
+      <Link>BaseShowMsg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BaseShowMsg.designer.cs">
+      <Link>BaseShowMsg.designer.cs</Link>
+      <DependentUpon>BaseShowMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BellTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\BellTime.designer.cs">
+      <DependentUpon>BellTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\DataGridCheck.cs">
+      <Link>DataGridCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\FKAttend.cs" />
+    <Compile Include="..\..\..\Taurus\FKFirmwareVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\FKFirmwareVer.designer.cs">
+      <DependentUpon>FKFirmwareVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\FpReader.cs">
+      <Link>FpReader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\frmFpReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\frmFpReader.designer.cs">
+      <DependentUpon>frmFpReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\HardInfo.cs" />
+    <Compile Include="..\..\..\Taurus\JsonParsing.cs">
+      <Link>JsonParsing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\MacDataFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\MacDataFormat.designer.cs">
+      <DependentUpon>MacDataFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\MacInfoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\MacInfoAdd.designer.cs">
+      <DependentUpon>MacInfoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubDevGroup.cs">
+      <Link>PubDevGroup.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubDevGroup.designer.cs">
+      <Link>PubDevGroup.designer.cs</Link>
+      <DependentUpon>PubDevGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubDisplay.designer.cs">
+      <DependentUpon>PubDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubPreview.designer.cs">
+      <DependentUpon>PubPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubReportLog.cs">
+      <Link>PubReportLog.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubReportLog.designer.cs">
+      <Link>PubReportLog.designer.cs</Link>
+      <DependentUpon>PubReportLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDate.designer.cs">
+      <DependentUpon>PubSelectDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDevGroup.cs">
+      <Link>PubSelectDevGroup.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDevGroup.designer.cs">
+      <Link>PubSelectDevGroup.designer.cs</Link>
+      <DependentUpon>PubSelectDevGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectEmp.designer.cs">
+      <DependentUpon>PubSelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectEmpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectEmpList.designer.cs">
+      <DependentUpon>PubSelectEmpList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectMacSN.cs">
+      <Link>PubSelectMacSN.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectMacSN.designer.cs">
+      <Link>PubSelectMacSN.designer.cs</Link>
+      <DependentUpon>PubSelectMacSN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SatrHttpServer.cs">
+      <Link>SatrHttpServer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SaveDataToDatabase.cs">
+      <Link>SaveDataToDatabase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SeaHttpServer.cs">
+      <Link>SeaHttpServer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SeaJson.cs">
+      <Link>SeaJson.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SelectEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SelectEmp.designer.cs">
+      <DependentUpon>SelectEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataClear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataClear.designer.cs">
+      <DependentUpon>SYDataClear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataType.cs">
+      <Link>SYDataType.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataType.designer.cs">
+      <Link>SYDataType.designer.cs</Link>
+      <DependentUpon>SYDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataUpdate.designer.cs">
+      <DependentUpon>SYDataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataRest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataRest.designer.cs">
+      <DependentUpon>SYDataRest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYDataBack.designer.cs">
+      <DependentUpon>SYDataBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\DBConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\DBConnect.designer.cs">
+      <DependentUpon>DBConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\DBPathSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\DBPathSelect.designer.cs">
+      <DependentUpon>DBPathSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Exception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Exception.designer.cs">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\HeaderView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYSetPort.cs">
+      <Link>SYSetPort.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYSetPort.designer.cs">
+      <Link>SYSetPort.designer.cs</Link>
+      <DependentUpon>SYSetPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\UC_Navbar.cs">
+      <Link>UC_Navbar.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\UC_Navbar.designer.cs">
+      <Link>UC_Navbar.designer.cs</Link>
+      <DependentUpon>UC_Navbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\UC_PanelMuen.cs">
+      <Link>UC_PanelMuen.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\UC_PanelMuen.designer.cs">
+      <Link>UC_PanelMuen.designer.cs</Link>
+      <DependentUpon>UC_PanelMuen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Taurus\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Taurus\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\Message.designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\MSSQL.cs" />
+    <Compile Include="..\..\..\Taurus\PubDataIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubDataIn.designer.cs">
+      <DependentUpon>PubDataIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\PubSelectDepart.designer.cs">
+      <DependentUpon>PubSelectDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\RowMergeView.designer.cs">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYOption.designer.cs">
+      <DependentUpon>SYOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPassword.designer.cs">
+      <DependentUpon>SYPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPower.designer.cs">
+      <DependentUpon>SYPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPowerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYPowerAdd.designer.cs">
+      <DependentUpon>SYPowerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="..\..\Taurus\Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\Taurus\SYRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Taurus\SYRegister.designer.cs">
+      <DependentUpon>SYRegister.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\Taurus\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseDate.resx">
+      <Link>BaseDate.resx</Link>
+      <DependentUpon>BaseDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChild.resx">
+      <DependentUpon>BaseMDIChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChildGrid.resx">
+      <DependentUpon>BaseMDIChildGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChildReport.resx">
+      <DependentUpon>BaseMDIChildReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChildReportPrint.resx">
+      <DependentUpon>BaseMDIChildReportPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChildReportTree.resx">
+      <DependentUpon>BaseMDIChildReportTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseMDIChildTree.resx">
+      <DependentUpon>BaseMDIChildTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseSelectEmp.resx">
+      <DependentUpon>BaseSelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BaseShowMsg.resx">
+      <Link>BaseShowMsg.resx</Link>
+      <DependentUpon>BaseShowMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\BellTime.resx">
+      <DependentUpon>BellTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\FKFirmwareVer.resx">
+      <DependentUpon>FKFirmwareVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\frmFpReader.resx">
+      <DependentUpon>frmFpReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\MacDataFormat.resx">
+      <DependentUpon>MacDataFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\MacInfoAdd.resx">
+      <DependentUpon>MacInfoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubDevGroup.resx">
+      <Link>PubDevGroup.resx</Link>
+      <DependentUpon>PubDevGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubDisplay.resx">
+      <DependentUpon>PubDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubPreview.resx">
+      <DependentUpon>PubPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubReportLog.resx">
+      <Link>PubReportLog.resx</Link>
+      <DependentUpon>PubReportLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectDate.resx">
+      <DependentUpon>PubSelectDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectDevGroup.resx">
+      <Link>PubSelectDevGroup.resx</Link>
+      <DependentUpon>PubSelectDevGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectEmp.resx">
+      <DependentUpon>PubSelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectEmpList.resx">
+      <DependentUpon>PubSelectEmpList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectMacSN.resx">
+      <Link>PubSelectMacSN.resx</Link>
+      <DependentUpon>PubSelectMacSN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SelectEmp.resx">
+      <DependentUpon>SelectEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYDataClear.resx">
+      <DependentUpon>SYDataClear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYDataType.resx">
+      <Link>SYDataType.resx</Link>
+      <DependentUpon>SYDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYDataUpdate.resx">
+      <DependentUpon>SYDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYDataRest.resx">
+      <DependentUpon>SYDataRest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYDataBack.resx">
+      <DependentUpon>SYDataBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\DBConnect.resx">
+      <DependentUpon>DBConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\DBPathSelect.resx">
+      <DependentUpon>DBPathSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\Exception.resx">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYSetPort.resx">
+      <Link>SYSetPort.resx</Link>
+      <DependentUpon>SYSetPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\UC_Navbar.resx">
+      <Link>UC_Navbar.resx</Link>
+      <DependentUpon>UC_Navbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\UC_PanelMuen.resx">
+      <Link>UC_PanelMuen.resx</Link>
+      <DependentUpon>UC_PanelMuen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Taurus\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubDataIn.resx">
+      <DependentUpon>PubDataIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\PubSelectDepart.resx">
+      <DependentUpon>PubSelectDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\RowMergeView.resx">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYOption.resx">
+      <DependentUpon>SYOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYPassword.resx">
+      <DependentUpon>SYPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYPower.resx">
+      <DependentUpon>SYPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Taurus\SYPowerAdd.resx">
+      <DependentUpon>SYPowerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\Taurus\SYRegister.resx">
+      <DependentUpon>SYRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxgrdesLib">
+      <Guid>{0CDAC26E-8F92-47EE-9E2E-844DBF78703A}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxgrproLib">
+      <Guid>{715CBE0F-4F50-46EF-B009-CACED3A5C868}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxRealSvrOcxTcpLib">
+      <Guid>{86683A0C-A3FA-4412-B044-51B918DBEE5C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="grdesLib">
+      <Guid>{0CDAC26E-8F92-47EE-9E2E-844DBF78703A}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="grproLib">
+      <Guid>{715CBE0F-4F50-46EF-B009-CACED3A5C868}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="HSCPID">
+      <Guid>{400E2B25-B69D-44CF-A332-D94F5AF5D535}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RealSvrOcxTcpLib">
+      <Guid>{86683A0C-A3FA-4412-B044-51B918DBEE5C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

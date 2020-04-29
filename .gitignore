@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/Taurus/v15/Server/sqlite3/db.lock
+/.vs/Taurus/v16/Server/sqlite3/db.lock
+/Bin/Database/Taurus.ldf
+/Bin/Database/Taurus.mdf
+*.dsn
+*.txt
+*.chm
+*.pdf
+*.ldb
+*.LDF
